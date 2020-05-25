@@ -5,3 +5,5 @@ To install tkinter just type in your terminal:
 'sudo apt-get install python-tk'
 or
 'sudo apt-get install python3-tk'
+
+Add "FastGit.py" to your .gitignore file!
