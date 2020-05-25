@@ -13,12 +13,12 @@ def GitStage():
 
 def GitCommit(commitMessage):
     if bool(commitMessage):
-        commitMessage = "git commit -m " + str(commitMessage)
+        commitMessage = "git commit -m " + '"' + str(commitMessage) + '"'
         os.system(commitMessage)
     else: print("Add commit message and try again")
 
 def GitStatus():
-    os.system("git status")
+    os.system("git status " + os.path.dirname(os.path.abspath(__file__)))
 
 
 def GitPush():
