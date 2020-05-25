@@ -15,7 +15,7 @@ def GitStage():
 
 def GitCommit(commitMessage):
     if bool(commitMessage):
-        commitMessage = "git commit -m " + "'" + str(commitMessage) + "'"
+        commitMessage = "git commit -m " + str(commitMessage)
         os.system(commitMessage)
         print("Commited")
     else: print("Add commit message and try again")
