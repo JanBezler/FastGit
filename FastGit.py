@@ -40,16 +40,4 @@ b3.pack()
 b4 = tk.Button(root, text='Status', command=lambda:GitCommit(e1.get()))
 b4.pack()
 
-
-def test():
-    return os.system("echo 333")
-
-print(test())
-
-
-text.insert(tk.END, str(test))
-text.pack()
-
-
-
 root.mainloop()
