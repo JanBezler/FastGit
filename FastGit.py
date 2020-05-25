@@ -1,6 +1,5 @@
 import os
 import tkinter as tk
-import subprocess
 
 root = tk.Tk()
 text = tk.Text(root)
