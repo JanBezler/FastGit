@@ -25,7 +25,7 @@ def GitPush():
     print("Trying to push")
     try:
         lines = []
-        with open(os.system(os.path.dirname(os.path.abspath(__file__)) + '"' + "/.git/FastGitconfig.conf",mode="r") as fileconfig:
+        with open(os.path.dirname(os.path.abspath(__file__)) + "/.git/FastGitconfig.conf",mode="r") as fileconfig:
             for line in fileconfig:
                 lines.append(line.strip())
             os.system("git push https://"+lines[0]+":"+lines[1]+"@"+lines[2]+" master")
@@ -37,7 +37,7 @@ def GitPull():
     print("Trying to pull")
     try:
         lines = []
-        with open(os.system(os.path.dirname(os.path.abspath(__file__)) + '"' + "/.git/FastGitconfig.conf",mode="r") as fileconfig:
+        with open(os.path.dirname(os.path.abspath(__file__)) + "/.git/FastGitconfig.conf",mode="r") as fileconfig:
             for line in fileconfig:
                 lines.append(line.strip())
             os.system("git pull https://"+lines[0]+":"+lines[1]+"@"+lines[2]+" master")
