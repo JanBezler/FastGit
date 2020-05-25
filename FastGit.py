@@ -18,7 +18,7 @@ def GitCommit(commitMessage):
     else: print("Add commit message and try again")
 
 def GitStatus():
-    os.system("git status " + os.path.dirname(os.path.abspath(__file__)))
+    os.system("git status")
 
 
 def GitPush():
