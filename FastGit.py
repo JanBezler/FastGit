@@ -35,6 +35,18 @@ def GitPush():
     except FileNotFoundError:
         print("GitHub account not added yet")
 
+def GitPull():
+    print("Trying to pull")
+    try:
+        lines = []
+        with open(".git/FastGitconfig.conf",mode="r") as fileconfig:
+            for line in fileconfig:
+                lines.append(line.strip())
+            os.system("git pull https://"+lines[0]+":"+lines[1]+"@"+lines[2]+" master")
+    except FileNotFoundError:
+        print("GitHub account not added yet")
+
+
 def addGitHub():
 
     def submitGitHub(login,password,repo):
@@ -83,6 +95,9 @@ e1.pack()
 
 b3 = tk.Button(root, text='Commit', command=lambda:GitCommit(e1.get()))
 b3.pack()
+
+b7 = tk.Button(root, text='Pull from GitHub', command=lambda:GitPull())
+b7.pack()
 
 b5 = tk.Button(root, text='Push to GitHub', command=lambda:GitPush())
 b5.pack()
