@@ -1,3 +1,4 @@
+#Designed by Jan Bezler
 import os
 import tkinter as tk
 
