@@ -30,7 +30,7 @@ def GitPush():
         with open("config.conf",mode="r") as fileconfig:
             for line in fileconfig:
                 lines.append(line.strip())
-            os.system("git push https://{"+lines[0]+":"+lines[1]+"@"+lines[2]+" master")
+            os.system("git push https://"+lines[0]+":"+lines[1]+"@"+lines[2]+" master")
 
     except FileNotFoundError:
         print("GitHub account not added yet")
