@@ -17,17 +17,17 @@ def GitCommit(commitMessage):
     if bool(commitMessage):
         commitMessage = "git commit -m " + str(commitMessage)
         os.system(commitMessage)
-        print("Commited")
     else: print("Add commit message and try again")
 
 def GitStatus():
     os.system("git status")
-    print("Status")
+
 
 def GitPush():
+    print("Trying to push")
     try:
         lines = []
-        with open("config.conf",mode="r") as fileconfig:
+        with open(".git/FastGitconfig.conf",mode="r") as fileconfig:
             for line in fileconfig:
                 lines.append(line.strip())
             os.system("git push https://"+lines[0]+":"+lines[1]+"@"+lines[2]+" master")
@@ -38,9 +38,10 @@ def GitPush():
 def addGitHub():
 
     def submitGitHub(login,password,repo):
-        config = open("config.conf",mode="w")
+        config = open(".git/FastGitconfig.conf",mode="w")
         config.write(login+"\n"+password+"\n"+repo[8:]+"\n")
         config.close()
+        print("Input data saved")
 
         
 
@@ -73,6 +74,9 @@ b1.pack()
 b2 = tk.Button(root, text='Stage Changes', command=lambda:GitStage())
 b2.pack()
 
+l3 = tk.Label(root,text="Commit message 'this_is_example'")
+l3.pack()
+
 e1 = tk.Entry()
 e1.pack()
 
@@ -85,7 +89,7 @@ b4.pack()
 b5 = tk.Button(root, text='Push to GitHub', command=lambda:GitPush())
 b5.pack()
 
-b6 = tk.Button(root, text='Add GitHub', command=lambda:addGitHub())
+b6 = tk.Button(root, text='Add GitHub Repo', command=lambda:addGitHub())
 b6.pack()
 
 root.mainloop()
