@@ -65,11 +65,12 @@ def addGitHub():
     b7 = tk.Button(root, text='Submit', command=lambda:submitGitHub(e2.get(),e3.get(),e4.get()))
     b7.pack()
     
-# ma działać
 
 b1 = tk.Button(root, text='Init Repository', command=lambda:GitInit())
 b1.pack()
 
+b4 = tk.Button(root, text='Check status', command=lambda:GitCommit(GitStatus()))
+b4.pack()
 
 b2 = tk.Button(root, text='Stage Changes', command=lambda:GitStage())
 b2.pack()
@@ -82,9 +83,6 @@ e1.pack()
 
 b3 = tk.Button(root, text='Commit', command=lambda:GitCommit(e1.get()))
 b3.pack()
-
-b4 = tk.Button(root, text='Status', command=lambda:GitCommit(GitStatus()))
-b4.pack()
 
 b5 = tk.Button(root, text='Push to GitHub', command=lambda:GitPush())
 b5.pack()
