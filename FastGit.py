@@ -1,4 +1,4 @@
-#Designed by Jan Bezler
+#Designed by Jan Bezler for tests
 import os
 import tkinter as tk
 
